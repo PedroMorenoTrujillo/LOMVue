@@ -29,7 +29,7 @@
     </template>
   </div>
   <button v-if="quizQuestionCopy.id < 10 && activeNextButton" type="button" class="btn btn-light px-5 fw-bold mt-2 mb-4 w-50 mx-auto" @click="nextQuestion">Siguiente!!</button>
-    <router-link v-if="quizQuestionCopy.id === 10 && activeNextButton" type="button" class="btn btn-light px-5 fw-bold mt-2 mb-4" to="/resume">Ver Resultados!!</router-link>
+    <router-link v-if="quizQuestionCopy.id === 10 && activeNextButton" type="button" class="btn btn-light px-5 fw-bold mt-2 mb-4 w-50 mx-auto" to="/resume">Ver Resultados!!</router-link>
 </div>
 
 </template>

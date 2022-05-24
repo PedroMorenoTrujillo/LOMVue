@@ -1,18 +1,34 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div className="container-fluid text-center h-100 p-0 wrapper">
+    <router-view/>
+  </div>
 </template>
 
 <style lang="scss">
+body{
+  
+  background: url("./assets/spacewallpaper.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.centerContainer, .resumeGame{
+    max-width: 30rem;
+    margin: 0 auto;
+}
+.wrapper {
+  overflow-y: scroll;
+}
+.header {
+  max-height: 4rem;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  height: 100vh;
 }
 
 nav {

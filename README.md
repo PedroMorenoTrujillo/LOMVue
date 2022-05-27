@@ -1,5 +1,5 @@
 # LOMVue
 
-Netlefly
+Netlefy
 
 https://lom-vue.netlify.app/#/

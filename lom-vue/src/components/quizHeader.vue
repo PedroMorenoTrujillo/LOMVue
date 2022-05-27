@@ -7,16 +7,12 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { mapState } from 'vuex';
+import { mapGetters } from 'vuex';
 
 export default defineComponent({
   name: 'QuizHeader',
   computed: {
-      ...mapState({
-          correct: (state: any)=> state.correct,
-          incorrect: (state: any)=> state.incorrect
-      })
+      ...mapGetters(['correct', 'incorrect'])
   }
-
 });
 </script>

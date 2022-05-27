@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { mapState } from 'vuex';
+import { mapGetters } from 'vuex';
 import QuizHeader from '../components/quizHeader.vue';
 import QuizContainer from '../components/quizContainer.vue';
 
@@ -23,12 +23,9 @@ export default defineComponent({
     QuizHeader,
     QuizContainer,
   },
-  computed: 
-      mapState({
-          quizQuestions: (state: any)=> state.quizQuestions,
-          index: (state: any)=> state.index
-      }),
-
+  computed: {
+      ...mapGetters(['quizQuestions', 'index']),
+  }
   
 });
 </script>

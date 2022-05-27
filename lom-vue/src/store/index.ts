@@ -10,23 +10,42 @@ export default createStore<StateInterface>({
     incorrect: 0
   },
   getters: {
-  },
-  mutations: {
+    index: state => state.index,
+    quizQuestions: state => state.quizQuestions,
+    correct: state => state.correct, 
+    incorrect: state => state.incorrect
   },
   actions: {
-    setAnswer: ({state}, quizQuestion)=>{
+    setAnswer({commit}, quizQuestion){
+      commit('setAnswer', quizQuestion)
+    },
+    setIndex({commit}, index){
+      commit('setIndex', index)
+    },
+    setScoreCorrect({commit}){
+      commit('setScoreCorrect')
+    },
+    setScoreIncorrect({commit}){
+      commit('setScoreIncorrect')
+    },
+    resetState({commit}){
+      commit('resetState')
+    }
+  },
+  mutations: {
+    setAnswer(state, quizQuestion){
       state.quizQuestions[state.index] = quizQuestion
     },
-    setIndex: ({state}, index)=>{
+    setIndex(state, index){
       state.index = index
     },
-    setScoreCorrect: ({state})=>{
+    setScoreCorrect(state){
       state.correct = state.correct + 1
     },
-    setScoreIncorrect: ({state})=>{
+    setScoreIncorrect(state){
       state.incorrect = state.incorrect + 1
     },
-    resetState: ({state})=>{
+    resetState(state){
       state.index = 0,
       state.quizQuestions = quizQuestions,
       state.correct = 0, 

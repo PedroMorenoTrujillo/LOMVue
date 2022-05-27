@@ -17,7 +17,7 @@
         <span class="showAnswerQuestion incorrect" v-if="showAnswerIncorrect">{{incorrectString}}<span class="text-danger fw-bold">{{incorrectAnswer}}</span></span>
       </div>
     </template>
-    <template v-if="quizQuestionCopy.type === 'input'">
+    <template v-else>
       <div class="d-flex flex-wrap justify-content-center py-3">
         <input type="text" v-model="inputTextValue">
         <button type="button" class="btn btn-primary my-3 w-75 fw-bold"
@@ -37,7 +37,7 @@
 <script lang="ts">
 import { Answers, QuizQuestion } from '@/models/questionsInterfaces';
 import { defineComponent } from 'vue';
-import { mapState, mapActions } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default defineComponent({
   name: 'QuizContainer',
@@ -57,10 +57,7 @@ export default defineComponent({
         }
     },
   computed: {
-      ...mapState({
-          index: (state: any)=> state.correct,
-          incorrect: (state: any)=> state.incorrect
-      })
+      ...mapGetters(['index', 'incorrect'])
   },
   watch: {
       quizQuestion() {

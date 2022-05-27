@@ -8,7 +8,7 @@
             <p>{{mainTexts.SecondParagraph}}</p>
             <p>{{mainTexts.ThirdParagraph}}</p>
         </div>
-        <router-link to="/quiz" type="button" class="btn btn-light px-5 fw-bold">Save humanty!!</router-link>
+        <router-link to="/quiz" type="button" class="btn btn-light px-5 fw-bold">Save humanity!!</router-link>
     </div>
 </div>
 </template>
